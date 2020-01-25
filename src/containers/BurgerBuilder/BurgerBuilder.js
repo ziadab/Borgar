@@ -1,6 +1,7 @@
 import React from "react";
 import Burger from "../../components/Burger/Burger";
 import BurgerControls from "../../components/Burger/BuildControles/BuildControls";
+import OrderSummury from "../../components/Burger/OderSummury/OrderSummury";
 import Modal from "../../components/UI/Modal/Modal";
 
 const INGREFIENT_PRICE = {
@@ -82,7 +83,9 @@ export default class BurgerBuilder extends React.Component {
 
     return (
       <React.Fragment>
-        <Modal />
+        <Modal>
+          <OrderSummury ingredients={this.state.ingredients} />
+        </Modal>
         <Burger ingredients={this.state.ingredients} />
         <BurgerControls
           AddIngredient={this.addIngredient}
