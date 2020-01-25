@@ -12,6 +12,10 @@ export default props => {
 
   return (
     <div className={classes.BuildControls}>
+      <p>
+        Total Price: <strong>{props.price.toFixed(2)} $</strong>
+        {console.log(props.purchasable)}
+      </p>
       {control.map(ctrl => {
         return (
           <BuildControl
@@ -23,9 +27,13 @@ export default props => {
             removed={() => {
               props.removeIngredient(ctrl.type);
             }}
+            disable={props.disableInfo[ctrl.type]}
           />
         );
       })}
+      <button className={classes.OrderButton} disabled={!props.purchasable}>
+        ORDER NOW
+      </button>
     </div>
   );
 };
