@@ -24,6 +24,10 @@ export default class BurgerBuilder extends React.Component {
     purchasing: false
   };
 
+  purchaseOp = () => {
+    alert("Bossa a 3amo");
+  };
+
   closeModal = () => {
     this.setState({ purchasing: false });
   };
@@ -93,7 +97,12 @@ export default class BurgerBuilder extends React.Component {
     return (
       <React.Fragment>
         <Modal show={this.state.purchasing} closeModal={this.closeModal}>
-          <OrderSummury ingredients={this.state.ingredients} />
+          <OrderSummury
+            totalPrice={this.state.totalPrice}
+            cancelThatShit={this.closeModal}
+            contuniePurchase={this.purchaseOp}
+            ingredients={this.state.ingredients}
+          />
         </Modal>
         <Burger ingredients={this.state.ingredients} />
         <BurgerControls

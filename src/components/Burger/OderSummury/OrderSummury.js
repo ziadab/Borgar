@@ -13,12 +13,14 @@ export default props => {
 
   return (
     <React.Fragment>
-      <h3>Your Order</h3>
+      <h3>
+        Your Order: <strong>{props.totalPrice.toFixed(2)} $</strong>
+      </h3>
       <p> Pika pika</p>
       <ul>{ingredientSummary}</ul>
       <div style={{ textAlign: "center" }}>
-        <Button click={null}>CANCEL</Button>
-        <Button click={null} type="Purchase">
+        <Button click={props.cancelThatShit}>CANCEL</Button>
+        <Button click={props.contuniePurchase} type="Purchase">
           PURCHASE
         </Button>
       </div>
