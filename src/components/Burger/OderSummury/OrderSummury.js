@@ -1,4 +1,5 @@
 import React from "react";
+import Button from "../../UI/Button/Button";
 
 export default props => {
   const ingredientSummary = Object.keys(props.ingredients).map(igKey => {
@@ -15,6 +16,12 @@ export default props => {
       <h3>Your Order</h3>
       <p> Pika pika</p>
       <ul>{ingredientSummary}</ul>
+      <div style={{ textAlign: "center" }}>
+        <Button click={null}>CANCEL</Button>
+        <Button click={null} type="Purchase">
+          PURCHASE
+        </Button>
+      </div>
     </React.Fragment>
   );
 };

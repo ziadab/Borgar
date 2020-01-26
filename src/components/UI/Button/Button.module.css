@@ -1,0 +1,22 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins&display=swap');
+
+.Button{
+    padding: 15px 20px 15px;
+    background-color: #ececec;
+    border-radius: 5px;
+    color: rgba(0, 0, 0, 0.7);
+    cursor: pointer;
+    font-weight: bold;
+    font-family: 'Poppins', sans-serif;
+    letter-spacing: 0.1em;
+    border: none;
+    margin: 10px;
+}
+
+.Purchase{
+    background-color: #E53935;
+    color: #FFF;
+    font-weight: 300;
+    letter-spacing: 0.1em;
+}
+
