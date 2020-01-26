@@ -20,7 +20,16 @@ export default class BurgerBuilder extends React.Component {
       bacon: 0
     },
     totalPrice: 4,
-    purchase: false
+    purchase: false,
+    purchasing: false
+  };
+
+  closeModal = () => {
+    this.setState({ purchasing: false });
+  };
+
+  purchasingHandler = () => {
+    this.setState({ purchasing: true });
   };
 
   updatePurchase = () => {
@@ -83,7 +92,7 @@ export default class BurgerBuilder extends React.Component {
 
     return (
       <React.Fragment>
-        <Modal>
+        <Modal show={this.state.purchasing} closeModal={this.closeModal}>
           <OrderSummury ingredients={this.state.ingredients} />
         </Modal>
         <Burger ingredients={this.state.ingredients} />
@@ -93,6 +102,7 @@ export default class BurgerBuilder extends React.Component {
           disableInfo={disableInfo}
           price={this.state.totalPrice}
           purchasable={this.state.purchase}
+          order={this.purchasingHandler}
         />
       </React.Fragment>
     );
