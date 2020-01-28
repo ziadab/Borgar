@@ -1,15 +1,21 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins&display=swap');
+
 .Modal {
     position: fixed;
     z-index: 500;
     background-color: white;
     width: 70%;
-    border: 1px solid #ccc;
-    box-shadow: 1px 1px 1px black;
-    padding: 16px;
+    font-family: 'Poppins', sans-serif;
+    letter-spacing: 0.1em;
+    border: none;
+    padding: 20px 60px ;
     left: 15%;
     top: 30%;
     box-sizing: border-box;
     transition: all 0.3s ease-out;
+    border-radius: 5px;
+    color: rgba(0, 0, 0, 0.7);
+    ;
 }
 
 @media (min-width: 600px) {
