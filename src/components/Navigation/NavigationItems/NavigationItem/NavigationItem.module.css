@@ -11,6 +11,7 @@
     text-decoration: none;
     display: block;
     box-sizing: border-box;
+    cursor: pointer;
 }
 
 .NavigationItem a:hover,
@@ -20,7 +21,7 @@
 }
 
 
-@media(min-width: 600px){
+@media(min-width: 700px){
     .NavigationItem{
         margin: 0;
         display: flex;

@@ -5,7 +5,11 @@ import Sidebar from "../Navigation/SideDrawer/SideDrawer";
 
 class Layout extends React.Component {
   state = {
-    showSideDrawer: true
+    showSideDrawer: false
+  };
+
+  sideDrawOpenHandler = () => {
+    this.setState({ showSideDrawer: true });
   };
 
   sideDrawCloseHandler = () => {
@@ -15,7 +19,7 @@ class Layout extends React.Component {
   render() {
     return (
       <React.Fragment>
-        <Toolbar />
+        <Toolbar showSideDraw={this.sideDrawOpenHandler} />
         <Sidebar
           show={this.state.showSideDrawer}
           closed={this.sideDrawCloseHandler}
