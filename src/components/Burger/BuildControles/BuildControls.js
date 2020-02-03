@@ -14,7 +14,6 @@ export default props => {
     <div className={classes.BuildControls}>
       <p>
         Total Price: <strong>{props.price.toFixed(2)} $</strong>
-        {console.log(props.purchasable)}
       </p>
       {control.map(ctrl => {
         return (
