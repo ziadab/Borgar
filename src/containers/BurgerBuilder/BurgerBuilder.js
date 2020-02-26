@@ -39,24 +39,40 @@ class BurgerBuilder extends React.Component {
   // All Methods
   purchaseOp = () => {
     //alert("Bossa a 3amo");
-    this.setState({ loading: true });
+    // this.setState({ loading: true });
 
-    const order = {
-      ingredients: this.state.ingredients,
-      totalPrice: this.state.totalPrice
-    };
+    // const order = {
+    //   ingredients: this.state.ingredients,
+    //   totalPrice: this.state.totalPrice
+    // };
 
-    axios
-      .post("/orders.json", order)
-      .then(res => {
-        this.setState({ loading: false, purchasing: false });
-        //console.log(res);
-        //alert("Bossa a 3amo");
-      })
-      .catch(err => {
-        this.setState({ loading: false, purchasing: false });
-        console.log(err);
-      });
+    // axios
+    //   .post("/orders.json", order)
+    //   .then(res => {
+    //     this.setState({ loading: false, purchasing: false });
+    //     //console.log(res);
+    //     //alert("Bossa a 3amo");
+    //   })
+    //   .catch(err => {
+    //     this.setState({ loading: false, purchasing: false });
+    //     console.log(err);
+    //   });
+    const queryParams = [];
+
+    for (let i in this.state.ingredients) {
+      queryParams.push(
+        `${encodeURIComponent(i)}=${encodeURIComponent(
+          this.state.ingredients[i]
+        )}`
+      );
+    }
+
+    const queryString = queryParams.join("&");
+
+    this.props.history.push({
+      pathname: "/checkout",
+      search: "?" + queryString
+    });
   };
 
   closeModal = () => {

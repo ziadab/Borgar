@@ -7,6 +7,7 @@ export default (WrapperComponenet, axios) => {
       error: null
     };
     componentWillUnmount() {
+      //console.log("wiw", this.reqInterceptors, this.resInterceptors);
       axios.interceptors.response.eject(this.resInterceptors);
       axios.interceptors.response.eject(this.reqInterceptors);
     }
